@@ -1,47 +1,45 @@
 #include <iostream>
 
-/* run this program using the console pauser or add your own getch, system("pause") or input loop */
-
 using namespace std;
 
-int main(int argc, char** argv) 
+extern void productos (int opcion);
+extern void imprimirFactura();
+void menu()
 {
 	int opcion = 0;
 	
-	while(true){
-		
+	while(true)
+	{
 		system("cls");
-		cout << "****" << endl;
-		cout << "Menu" << endl;
-		cout << "****" << endl;
+		
+		cout << "****";
+		cout << "Menu";
+		cout << "****";
+		cout << endl;
+		cout << endl;
+		cout << endl;
+		
+		cout << " 1 - Bebidas Calientes" << endl;
+		cout << " 2 - Bebidas Frias" << endl;
+		cout << " 3 - Reposteria" << endl;
+		cout << " 4 - Imprimir Factura" << endl;
+		cout << " 0 - Salir" << endl;	
 		
 		cout << endl;
-		cout << "1 - Cafe y Granitas" << endl;
-		cout << "2 - Reposteria" << endl;
-		cout << "0 - Salir" << endl;
-		
-		cout << "Ingrese una opcion del menu: ";
+		cout << "Ingrese una opcion: ";
 		cin >> opcion;
 		
-		if (opcion == 1) {
-			system("cls");
-			cout << "Estas en el menu de cafe y granitas" << endl;
-			system("pause");
-		} 
-		
-		if(opcion == 2){
-		system("cls");
-		cout << "Estas en el menu de resposteria" << endl;
-		system("pause");
-		}
-		
-		if (opcion == 0) {
+		if (opcion == 0)
+		{
 			break;
+		}
+		if (opcion == 4)
+		{
+			imprimirFactura();
+		} else {
+			productos(opcion);
 		}
 		
 	}
-	    cout << endl;
-		cout <<" Saliste del sistema";
-		
-	return 0;
+
 }
